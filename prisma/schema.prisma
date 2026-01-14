@@ -1,0 +1,34 @@
+// prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // 我们用的是 MySQL
+}
+
+// 1. 文章表
+model Post {
+  id        Int       @id @default(autoincrement())
+  title     String    @db.VarChar(255)
+  content   String    @db.Text // 文章内容可能很长
+  author    String    // 作者的钱包地址 (0x...)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  
+  // 关系：一篇文章有多个评论
+  comments  Comment[]
+}
+
+// 2. 评论表
+model Comment {
+  id        Int      @id @default(autoincrement())
+  content   String
+  author    String   // 评论者的钱包地址
+  createdAt DateTime @default(now())
+  
+  // 关系：属于哪篇文章
+  postId    Int
+  post      Post     @relation(fields: [postId], references: [id])
+}

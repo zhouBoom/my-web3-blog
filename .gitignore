@@ -48,3 +48,4 @@ contracts/typechain-types
 
 #mysql
 mysql-data
+/app/generated/prisma
