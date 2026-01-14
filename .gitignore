@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Hardhat
+contracts/node_modules
+contracts/artifacts
+contracts/cache
+contracts/typechain-types
+
+#mysql
+mysql-data
