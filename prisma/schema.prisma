@@ -17,7 +17,7 @@ model Post {
   author    String    // 作者的钱包地址 (0x...)
   createdAt DateTime  @default(now())
   updatedAt DateTime  @updatedAt
-  
+  category  String    @default("Tech") // 新增字段：分类
   // 关系：一篇文章有多个评论
   comments  Comment[]
 }
