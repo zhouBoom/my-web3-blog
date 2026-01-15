@@ -6,6 +6,7 @@ generator client {
 
 datasource db {
   provider = "mysql" // 我们用的是 MySQL
+  url      = env("DATABASE_URL")
 }
 
 // 1. 文章表
