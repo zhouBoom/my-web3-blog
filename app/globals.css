@@ -83,8 +83,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: oklch(1 0 0);
+    --foreground: oklch(0.129 0.042 264.695);
   }
 }
 
@@ -134,7 +134,7 @@ body {
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-white text-black;
   }
 
   h1,
@@ -144,8 +144,19 @@ body {
   h5,
   h6,
   a,
-  input,
-  textarea {
+  p,
+  span,
+  li,
+  blockquote,
+  .prose * {
     @apply text-black;
+  }
+
+  /* 强行修复输入框样式 */
+  input,
+  textarea,
+  .ProseMirror {
+    background-color: white !important;
+    color: black !important;
   }
 }

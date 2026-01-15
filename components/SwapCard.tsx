@@ -17,7 +17,7 @@ const TOKEN_SWAP_ADDRESS = process.env.NEXT_PUBLIC_TOKEN_SWAP_ADDRESS as `0x${st
 export function SwapCard() {
     const { address, isConnected } = useAccount();
     const [ethAmount, setEthAmount] = useState('');
-    const [rate, setRate] = useState<bigint>(BigInt(100)); // 默认汇率 1 ETH = 100 BLG
+    const [rate, setRate] = useState<bigint>(BigInt(10000)); // 默认汇率 1 ETH = 10000 WBT
 
     // 1. 读取汇率 rate
     const { data: currentRate } = useReadContract({
@@ -72,7 +72,7 @@ export function SwapCard() {
                     <RefreshCw className="h-4 w-4 text-gray-400 cursor-pointer hover:rotate-180 transition" onClick={() => refetchBlg()} />
                 </CardTitle>
                 <CardDescription>
-                    当前汇率: 1 ETH = {rate.toString()} BLG
+                    当前汇率: 1 ETH = {rate.toString()} WBT
                 </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -98,7 +98,7 @@ export function SwapCard() {
                 {/* BLG 预估输出 */}
                 <div className="space-y-2">
                     <div className="flex justify-between text-xs text-gray-500">
-                        <span>获得 (BLG)</span>
+                        <span>获得 (WBT)</span>
                         <span>余额: {blgBalance ? formatEther(blgBalance) : '0'}</span>
                     </div>
                     <div className="p-3 bg-gray-100 rounded-md font-mono text-lg text-gray-700">

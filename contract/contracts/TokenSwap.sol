@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract TokenSwap is Ownable {
     IERC20 public token;
-    uint256 public rate = 100000; // 汇率: 1 ETH = 1000 WBT
+    uint256 public rate = 10000; // 汇率: 1 ETH = 10000 WBT
     // 代币购买事件，设置为event主要是为了方便查看
     event TokensPurchased(
         address buyer,

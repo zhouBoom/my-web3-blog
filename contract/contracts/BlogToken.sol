@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract BlogToken is ERC20, Ownable {
     // 构造函数：设定名字和代号，并铸造初始供应量给部署者
-    constructor() ERC20("BlogToken", "BLG") Ownable(msg.sender) {
+    constructor() ERC20("BlogToken", "WBT") Ownable(msg.sender) {
         // 初始发行100w个代币，18位的精度
         _mint(msg.sender, 1000000 * 10 ** decimals());
     }

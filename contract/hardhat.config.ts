@@ -35,5 +35,10 @@ export default defineConfig({
       url: configVariable("SEPOLIA_RPC_URL"),
       accounts: [configVariable("SEPOLIA_PRIVATE_KEY")],
     },
+    // 添加 localhost 配置，确保能连接到 npx hardhat node
+    localhost: {
+      url: "http://127.0.0.1:8545",
+      chainType: "l1", // 只要是非 edr 即可
+    },
   },
 });

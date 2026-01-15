@@ -1,12 +1,14 @@
 import { network } from "hardhat";
 
-// 连接到 hardhatOp 网络
-const { ethers } = await network.connect({
-    network: "hardhatOp",
-    chainType: "op",
-});
-
+// const { ethers } = await network.connect({
+//     network: "hardhatOp",
+//     chainType: "op",
+// });
 async function main() {
+    // 显式连接到 localhost，确保部署到持久化节点
+    const { ethers } = await network.connect({
+        network: "localhost",
+    });
     const [deployer] = await ethers.getSigners();
     console.log("正在使用账户部署合约:", deployer.address);
     // 打印一下余额，确保deployer有钱

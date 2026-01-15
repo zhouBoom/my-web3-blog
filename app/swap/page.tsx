@@ -9,8 +9,8 @@ export default function SwapPage() {
                     代币兑换中心 🪙
                 </h1>
                 <p className="text-xl text-muted-foreground max-w-lg mx-auto">
-                    使用 ETH 兑换平台原生代币 $BLG，用于打赏优质文章作者。
-                    <br />
+                    使用 ETH 兑换平台原生代币 $WBT，用于打赏优质文章作者。
+                    <br />         <br />
                     <span className="text-sm text-gray-400">(测试网环境，无需真实资金)</span>
                 </p>
             </div>
